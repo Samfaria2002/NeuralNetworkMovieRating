@@ -3,9 +3,6 @@
 <p>Olá! Essa é um projeto ainda em desenvolvimento de uma rede neural criada e treinada para realizar a 
 tarefa classificação de filmes em "bom" ou "ruim".</p>
 
-<p>No início são gerados 200 avaliações (fakes kk) que são representadas por numeros de 1 a 9.
-Se a avaliação for de 7 ou maior, ela é rotulada como "boa", caso menor, é rotulada como "ruim".</p>
-
 <h2>Entendendo a lógica de uma Rede Neural</h2>
 <p><Strong>Rede neural</Strong> é um método de inteligência artificial que ensina computadores a processar dados de forma semelhante ao cérebro 
 humano. É um tipo de processo de machine learning, que usa <strong>nós ou neurônios</strong> interconectados em uma estrutura em camadas, semelhante ao cérebro humano.
@@ -18,54 +15,45 @@ que estão associados a determinado <strong>peso</strong>. As unidades fazem ope
     <li>Camadas Intermediárias ou Ocultas: onde é feita a maior parte do processamento, através das conexões ponderadas; podem ser consideradas como extratoras de características;</li>
     <li>Camada de Saída: onde o resultado final é concluído e apresentado.</li>
 </ul>
-Na camada de entrada, cada avaliação de filme é tratada como um vetor, uma matriz com uma única linha apenas.
-A álbegra linear é aplicada para manipular e realizar operações matriciais com esses vetores.
-Na camada oculta, é realizado combinações dos pesos de cada neurônio. É basicamente uma multiplicação de
-matrix (pesos) por vetor (entradas).
-Na camada de saída, é realizado também combinações da camada oculta. Novamente, a multiplicação de matriz e vetor é aplicada, que é uma operação de Algebra Linear.
 
-model = keras.Sequential([
-    layers.Input(shape=(1,)), - camada de entrada
-    layers.Dense(4, activation='relu'), - camada oculta
-    layers.Dense(1, activation='sigmoid') - camada de saída
-])
-'''
+<h2><strong>Explicando a Rede Neural do código</strong></h2>
 
-'''
-Após, é realizado o treinamento do modelo da rede neural. Ali, a rede ajusta todos os pesos nas camadas.
-Ela faz isso usando o algoritmo de descida de gradiente, que é feito com cálculos de derivadas e operações 
-de algebra linear.
+<p>A rede neural presente neste projeto tem o intúito único de avaliar filmes através de notas. Durante o processamento, a rede neural determinará a qualidade de um filme 
+    em "bom" ou "ruim", sendo "bom" uma nota final acima de 7 e "ruim" uma nota final abaixo de 7.</p>
 
-Por fim, a rede faz previsões com novos dados recebidos, realizando as mesmas operações de Álgebra Linear 
-para calcular as ativações das camadas. E finalmente, tem o resultado final de cada avaliação de filme.
+<p>Como dito anteriormente, RNAs (rede neural artificial) possuem uma característica distinta em sua arquitetura. Sua disposição se da em forma de camadas de processamento. No código, fiz o uso 
+de 3 camadas:</p>
+<ul>
+    <li>A primeira camada 'layers.Input(shape=(1,))' é a camada de entrada. Ela espera um vetor de entrada de tamanho 1.</li>
+    <li>A segunda camada 'layers.Dense(4, activation='relu')' é a camada oculta da rede neural. Ela possui 4 neurônios e utiliza a função de ativação ReLU.</li>
+    <li>A terceira e última camada 'layers.Dense(1, activation='sigmoid')' é a camada de saída da rede neural. Ela possui 1 neurônio e utiliza a função de ativação sigmóide.</li>
+</ul>
 
+<p>Durante toda a fase inicial de preparação da rede, cada neurônio é responsável por ajustar seus pesos através de cálculos matemáticos. Ao realizar essa etapa, a rede garante maior acurácia e estabilidade durante o treinamento 
+de dados, pois todos os neurônios estarão calibrados e prontos para a chegadas dos dados de validação.<br>
+Todo o cálculo executado nos neurônios presentes nas camadas envolve puramente álgebra linear, eles fazem operações de multiplicações de pesos pelas entradas e viés.
+Por exemplo, nas camadas layers.Dense (intermediária e de saída), cada neurônio está conectado aos neurônios da camada anterior através de um conjunto de pesos, formando uma matriz.
+Durante a forwardpropagation e na backpropagation, operação de multiplicação de matrizes e vetores são feitas para calcular as saídas de rede e ajustar os pesos dos neurônios.
+Todos os calculos de matrizes e vetores são necessários para preparar os neurônios para o treinamento com os dados de teste, para evitar perdas deeficiência e possíveis erros.</p>
 
-EXPLICAÇÃO APROFUNDADA DA ALGEBRA LINEAR COM MATRIZ E VETOR APLICADA NO CÓDIGO
+<p>Após, é realizado o treinamento do modelo da rede neural. Ali, a rede ajusta todos os pesos nas camadas através do algoritmo de descida de gradiente, que é feito com cálculos de derivadas e operações 
+de algebra linear. Nesta etapa, os dados recebidos se dividem em dados de treinamento e dados de validação. Os dados de treinamento são aplicados primeiro para calibrar os pesos para os dados de teste, é nesse ponto que a rede neural 
+irá se preparar e aprender a processar os tipos de dados que serão enviados futuramente. Em adição, temos os dados de validação, que são enviados a rede logo após os dados de treinamento para ajudar a garantir a assertividade das respostas retornadas.</p>
 
-A primeira camada 'layers.Input(shape=(1,))' é a camada de entrada da rede neural. Ela espera um vetor de entrada de tamanho 1.
-A segunda camada 'layers.Dense(4, activation='relu')': é a camada oculta da rede neural. Ela possui 4 neurônios e utiliza a função de ativação ReLU.
-A terceira e última camada 'layers.Dense(1, activation='sigmoid')' é a camada de saída da rede neural. Ela possui 1 neurônio e utiliza a função de ativação sigmóide.
+<p>Por fim, a rede faz previsões com novos dados recebidos, realizando as mesmas operações de álgebra linear para calcular as ativações das camadas. E finalmente, tem o resultado final de cada avaliação de filme.</p>
 
-A álgebra linear se da pels calculos matemáticos que os neurônios executam. Eles fazem operações de multiplicações de pesos pelas entradas e viés.
-Essas operações são consideradas calculos de álgebra linear
-Por exemplo, nas camadas Dense, cada neurônio está conectado aos neurônios da camada anterior através de um conjunto de pesos, formando uma matriz.
-Durante a forward propagation e na backpropagation, operação de multiplicação de matrizes e vetores são feitas para calcular as saídas de rede 
-e ajustar os pesos dos neurônios.
-Todos os calculos de matrizes e vetores são necessários para preparar os neurônios para o treinamento com os dados de teste, para evitar perdas de
-eficiência e possíveis erros.
+<h2><strong>Ajuste de pesos da camada intermediária</strong></h2>
 
-
-MULTIPLICAÇÃO DE MATRIZ E VETOR - APLICAÇÃO DA ÁLGEBRA LINEAR PARA A EMENTA DA A3
-
-Na camada oculta com ativação ReLU '(layers.Dense(4, activation='relu'))', a multiplicação de matriz e vetor funciona dessa forma:
-
-- vamos supor que a entrada seja um vetor de tamanho 1 (que é o que ta no código no 'layers.Input(shape=(1,))');
-- a camada oculta possui 4 neurônios, cada um com seu conjunto de pesos e um viés associado (a segunda camada).
-- os pesos de uma camada densa são representados como uma matriz, onde cada linha representa os pesos de um neurônio.
-- se tivermos uma entrada de dimensão (1,) e 4 neurônios na camada oculta, teremos uma matriz de pesos com dimensão (1, 4).
-- a forward propagation, a entrada é multiplicada pelos pesos dessa camada e, em seguida, somados os viéses.
-
-Essa operação é uma multiplicação de matriz por vetor, onde o vetor de entrada é multiplicado pela matriz da camada densa.
+<p>Durante a etapa de processamento da camada intermediária, cada neurônio realiza combinações dos pesos através de uma multiplicação de matriz (pesos) por vetor (entradas)
+Na camada intermediária/oculta com ativação ReLU '(layers.Dense(4, activation='relu'))', a multiplicação de matriz e vetor funciona dessa forma:</p>
+<ol>
+    <li>vamos supor que a entrada seja um vetor de tamanho 1 (que é o que ta no código no 'layers.Input(shape=(1,))')</li>
+    <li>a camada oculta possui 4 neurônios, cada um com seu conjunto de pesos e um viés associado (a segunda camada)</li>
+    <li>os pesos de uma camada densa são representados como uma matriz, onde cada linha representa os pesos de um neurônio</li>
+    <li>se tivermos uma entrada de dimensão (1,) e 4 neurônios na camada oculta, teremos uma matriz de pesos com dimensão (1, 4)</li>
+    <li>a forwardpropagation, a entrada é multiplicada pelos pesos dessa camada e, em seguida, somados os viéses</li>
+</ol>
+<p>Essa operação é uma multiplicação de matriz por vetor, onde o vetor de entrada é multiplicado pela matriz da camada densa.</p>
 
 Quando a rede neural inicia, os viéses, assim como os pesos, são inicializados com valores aleatórios pequenos. 
 Ao longo do treinamento, assim como os pesos, os viéses são ajustados iterativamente pelo algoritmo de otimização para 
