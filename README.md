@@ -31,7 +31,6 @@ de 3 camadas:</p>
 
 <p>Durante toda a fase inicial de preparação da rede, cada neurônio é responsável por ajustar seus pesos através de cálculos matemáticos. Ao realizar essa etapa, a rede garante maior acurácia e estabilidade durante o treinamento 
 de dados, pois todos os neurônios estarão calibrados e prontos para a chegadas dos dados de validação.</p>
-<br>
 
 <p>Todo o cálculo executado nos neurônios presentes nas camadas envolve puramente álgebra linear, eles fazem operações de multiplicações de pesos pelas entradas e viés.
 Por exemplo, nas camadas layers.Dense (intermediária e de saída), cada neurônio está conectado aos neurônios da camada anterior através de um conjunto de pesos, formando uma matriz.
