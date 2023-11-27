@@ -1,18 +1,23 @@
-# NeuralNetworkMovieRating
-'''
-EXPLICAÇÃO BRABA
-'''
+<h3>Rede Neural - Avaliação de Filmes</h3>
 
-'''
-Isso é uma pequena rede neural criada e treinada para realizar a 
-tarefa classificação de filmes em "bom" ou "ruim".
-'''
+<p>Olá! Essa é um projeto ainda em desenvolvimento de uma rede neural criada e treinada para realizar a 
+tarefa classificação de filmes em "bom" ou "ruim".</p>
 
-'''
-No início são gerados 200 avaliações (fakes kk) que são representadas por numeros de 1 a 9.
-Se a avaliação for de 7 ou maior, ela é rotulada como "boa", caso menor, é rotulada como "ruim".
+<p>No início são gerados 200 avaliações (fakes kk) que são representadas por numeros de 1 a 9.
+Se a avaliação for de 7 ou maior, ela é rotulada como "boa", caso menor, é rotulada como "ruim".</p>
 
-Para a ementa da A3, esta sendo utilizado a Algebra Linear (as linhas de código abaixo).
+<h3>Entendendo a teoria de uma Rede Neural</h3>
+<p><Strong>Rede neural</Strong> é um método de inteligência artificial que ensina computadores a processar dados de forma semelhante ao cérebro 
+humano. É um tipo de processo de machine learning, que usa <strong>nós ou neurônios</strong> interconectados em uma estrutura em camadas, semelhante ao cérebro humano.
+Uma rede neural artificial (ou RNA) é composta por vários neurônios, cujo funcionamento é bastante simples. Geralmente, os neurônios são conectadas por canais de comunicação 
+que estão associados a determinado <strong>peso</strong>. As unidades fazem operações apenas sobre seus dados locais, que são entradas recebidas pelas suas conexões.</p>
+
+<p>As arquiteturas neurais são tipicamente organizadas entre <strong>camadas</strong, e cada camada está conectada com a camada anterior:</p>
+<ul>
+    <li>Camada de Entrada: onde os padrões são apresentados à rede;</li>
+    <li>Camadas Intermediárias ou Ocultas: onde é feita a maior parte do processamento, através das conexões ponderadas; podem ser consideradas como extratoras de características;</li>
+    <li>Camada de Saída: onde o resultado final é concluído e apresentado.</li>
+</ul>
 Na camada de entrada, cada avaliação de filme é tratada como um vetor, uma matriz com uma única linha apenas.
 A álbegra linear é aplicada para manipular e realizar operações matriciais com esses vetores.
 Na camada oculta, é realizado combinações dos pesos de cada neurônio. É basicamente uma multiplicação de
