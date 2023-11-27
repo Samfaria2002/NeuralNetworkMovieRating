@@ -1,4 +1,4 @@
-<h3>Rede Neural - Avaliação de Filmes</h3>
+<h1><strong>Rede Neural - Avaliação de Filmes</strong></h1>
 
 <p>Olá! Essa é um projeto ainda em desenvolvimento de uma rede neural criada e treinada para realizar a 
 tarefa classificação de filmes em "bom" ou "ruim".</p>
@@ -6,7 +6,7 @@ tarefa classificação de filmes em "bom" ou "ruim".</p>
 <p>No início são gerados 200 avaliações (fakes kk) que são representadas por numeros de 1 a 9.
 Se a avaliação for de 7 ou maior, ela é rotulada como "boa", caso menor, é rotulada como "ruim".</p>
 
-<h3>Entendendo a teoria de uma Rede Neural</h3>
+<h2>Entendendo a lógica de uma Rede Neural</h2>
 <p><Strong>Rede neural</Strong> é um método de inteligência artificial que ensina computadores a processar dados de forma semelhante ao cérebro 
 humano. É um tipo de processo de machine learning, que usa <strong>nós ou neurônios</strong> interconectados em uma estrutura em camadas, semelhante ao cérebro humano.
 Uma rede neural artificial (ou RNA) é composta por vários neurônios, cujo funcionamento é bastante simples. Geralmente, os neurônios são conectadas por canais de comunicação 
@@ -39,10 +39,7 @@ de algebra linear.
 Por fim, a rede faz previsões com novos dados recebidos, realizando as mesmas operações de Álgebra Linear 
 para calcular as ativações das camadas. E finalmente, tem o resultado final de cada avaliação de filme.
 
-:D
-'''
 
-'''
 EXPLICAÇÃO APROFUNDADA DA ALGEBRA LINEAR COM MATRIZ E VETOR APLICADA NO CÓDIGO
 
 A primeira camada 'layers.Input(shape=(1,))' é a camada de entrada da rede neural. Ela espera um vetor de entrada de tamanho 1.
@@ -57,9 +54,7 @@ e ajustar os pesos dos neurônios.
 Todos os calculos de matrizes e vetores são necessários para preparar os neurônios para o treinamento com os dados de teste, para evitar perdas de
 eficiência e possíveis erros.
 
-'''
 
-'''
 MULTIPLICAÇÃO DE MATRIZ E VETOR - APLICAÇÃO DA ÁLGEBRA LINEAR PARA A EMENTA DA A3
 
 Na camada oculta com ativação ReLU '(layers.Dense(4, activation='relu'))', a multiplicação de matriz e vetor funciona dessa forma:
@@ -94,9 +89,7 @@ O calculo de matriz por vetor (entrada pelo peso) + o viés fica da seguinte for
 Nesse código, utilizamos o numpy para facilitar nossos cálculos. A função np.dot() é utilizada para realizar 
 a multiplicação de matriz por vetor, e a função np.maximum() é utilizada para aplicar a função de ativação ReLU aos resultados da multiplicação.
 
-'''
 
-'''
 FUNÇÃO - ATIVAÇÃO RELU - EMENTA DA A3
 
 Quando definimos nossas camadas, nos adicionados um parâmetro adicional para aprimorar ainda mais a eficiência da rede.
