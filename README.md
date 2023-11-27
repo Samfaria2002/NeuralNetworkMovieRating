@@ -80,7 +80,7 @@ permitindo um ajuste mais flexível da função de ativação e dos limites de d
 a multiplicação de matriz por vetor, e a função np.maximum() é utilizada para aplicar a função de ativação ReLU aos resultados da multiplicação.</p>
 
 
-<h2>FUNÇÃO - ATIVAÇÃO RELU</h2>
+<h2>Ativação ReLU</h2>
 
 <p>Quando definimos as camadas, nos adicionados um parâmetro adicional para aprimorar ainda mais a eficiência da rede.
 A função de ativação ReLU (Rectified Linear Unit) é uma função usada especialmente em camadas intermediárias (camadas ocultas). 
